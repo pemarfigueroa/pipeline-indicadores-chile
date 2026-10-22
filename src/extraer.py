@@ -45,6 +45,6 @@ def guardar_json(datos, ruta):
 
 if __name__ == "__main__":
     datos = extraer(url)
-    print(f"Registros recibidos: {len(datos['serie'])}")
+    print(f"Registros recibidos: {len(datos['serie'])}.")
     guardar_json(datos, archivo_bronze)
-    print(f"Guardado en: {archivo_bronze}")
+    print(f"Guardado en: {archivo_bronze}.")
