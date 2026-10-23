@@ -4,7 +4,7 @@ import time
 from pathlib import Path
 
 # Defino los parametros del proceso
-indicador = "uf"
+indicador = "dolar"
 year = 2026
 url = f"https://mindicador.cl/api/{indicador}/{str(year)}"
 

@@ -5,7 +5,7 @@ import pandas as pd
 
 from pathlib import Path
 
-indicador = "uf"
+indicador = "dolar"
 year = 2026
 
 raiz = Path(__file__).resolve().parent.parent
