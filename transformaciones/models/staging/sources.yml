@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: silver
+    meta:
+      external_location: "C:/Proyectos/pipeline-indicadores-chile/data/silver/indicador={name}/**/*.parquet"
+    tables:
+      - name: uf
+      - name: dolar

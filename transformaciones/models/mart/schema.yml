@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: uf_en_dolares
+    columns:
+      - name: fecha
+        data_tests:
+          - not_null
+          - unique
+      - name: valor_uf
+        data_tests:
+          - not_null
+      - name: valor_dolar
+        data_tests:
+          - not_null:
+              config:
+                severity: warn
