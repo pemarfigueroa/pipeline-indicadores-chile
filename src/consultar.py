@@ -8,13 +8,13 @@ year = 2026
 
 raiz = Path(__file__).resolve().parent.parent
 
-archivo_silver = (raiz / "data" / "silver"
-                  / "**"
-                  / "*.parquet"
+archivo_silver = (raiz / "data" / "gold"
+                  / "indicadores.duckdb"
                   ).as_posix()
 
-
+conn = duckdb.connect(archivo_silver, read_only=True)
 # consulta = f"SELECT * FROM read_parquet('{archivo_silver}', hive_partitioning=True)  LIMIT 10"
-consulta = f"SELECT indicador, COUNT(1) FROM read_parquet('{archivo_silver}', hive_partitioning=True) GROUP BY indicador"
+consulta = "SELECT * FROM uf_en_dolares LIMIT 10"
 
-duckdb.sql(consulta).show()
+conn.sql(consulta).show()
+conn.close()
