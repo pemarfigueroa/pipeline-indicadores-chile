@@ -116,6 +116,23 @@ dbt test
 - **Orquestación**: ejecución automática diaria con GitHub Actions.
 - **AWS**: almacenamiento en S3, consultas con Athena y tablas Iceberg.
 
+# ETAPA AWS
+
+Se agrega una etapa básica en AWS, en la cual los archivos Silver se suben a un bucket S3, se las definiciones se almacenan en Glue Data Catalog, y la etapa Gold se genera con Athena.
+
+## Subir archivos a Bucket S3
+`aws s3 cp data/silver s3://pemar-pipeline-indicadores-dev/silver --recursive`
+
+## AWS Athena
+
+- Archivo: `01_crear_tablas.sql`, que crea la base de datos y tablas que se almacenan en Glue Data Catalog.
+  - Se crea la base de Datos.
+  - Se crea la Tabla en base a los archivos en S3.
+  - Luego se usa `MSCK REPAIR` para poder registrar en el catálogo las particiones que existen en S3.
+- Archivo `02_gold_uf_en_dolares.sql`.
+  - Finalmente se crea la tabla Gold, a partir del Select del calculo de Uf en Dólares
+
+
 ## Autor
 
 Pedro Figueroa: desarrollador ETL con más de 20 años de experiencia en DataStage, PowerCenter, Oracle y SQL Server.
