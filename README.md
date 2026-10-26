@@ -134,13 +134,13 @@ Se agrega una etapa básica en AWS, en la cual los archivos Silver se suben a un
 
 Se adjuntan imagenes para validación:
 
-Se muestra el resultado de los archivos en el Bucket de S3:
+Se muestra el resultado de los archivos en el Bucket de S3:\
 ![Archivos en Bucket S3](AWS/img/01_bucket_S3_CLI.png)
 
-Las tablas Silver y Gold en Athena:
+Las tablas Silver y Gold en Athena:\
 ![Tablas creadas en Athena](AWS/img/02_Tablas_Silver_Gold_en_Athena.png)
 
-Resultado de datos en Gold:
+Resultado de datos en Gold:\
 ![Resultado Gold](AWS/img/03_Resultado_de_Datos_en_Gold.png)
 
 ## Autor
