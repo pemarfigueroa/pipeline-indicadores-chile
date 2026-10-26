@@ -118,7 +118,7 @@ dbt test
 
 # ETAPA AWS
 
-Se agrega una etapa básica en AWS, en la cual los archivos Silver se suben a un bucket S3, se las definiciones se almacenan en Glue Data Catalog, y la etapa Gold se genera con Athena.
+Se agrega una etapa básica en AWS, en la cual los archivos Silver se suben a un bucket S3, las definiciones se almacenan en Glue Data Catalog, y la etapa Gold se genera con Athena.
 
 ## Subir archivos a Bucket S3
 `aws s3 cp data/silver s3://pemar-pipeline-indicadores-dev/silver --recursive`
@@ -132,6 +132,16 @@ Se agrega una etapa básica en AWS, en la cual los archivos Silver se suben a un
 - Archivo `02_gold_uf_en_dolares.sql`.
   - Finalmente se crea la tabla Gold, a partir del Select del calculo de Uf en Dólares
 
+Se adjuntan imagenes para validación:
+
+Se muestra el resultado de los archivos en el Bucket de S3:
+![Archivos en Bucket S3](AWS/img/01_bucket_S3_CLI.png)
+
+Las tablas Silver y Gold en Athena:
+![Tablas creadas en Athena](AWS/img/02_Tablas_Silver_Gold_en_Athena.png)
+
+Resultado de datos en Gold:
+![Resultado Gold](AWS/img/03_Resultado_de_Datos_en_Gold.png)
 
 ## Autor
 
